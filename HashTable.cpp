@@ -35,7 +35,7 @@ private:
     // check the load factor
     void check_load_factor() {
         float load_factor = (float)num_elements / current_size;
-        if (load_factor >= max_load_factor) {
+        if (load_factor > max_load_factor) {
             rehash();
         }
     }
