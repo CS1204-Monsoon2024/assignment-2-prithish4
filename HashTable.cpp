@@ -16,11 +16,28 @@ private:
     int hash(int key) {
         return key % current_size;
     }
+    bool is_prime(int n) {
+        if (n <= 1) return false;
+        if (n == 2 || n == 3) return true;
+        if (n % 2 == 0 || n % 3 == 0) return false;
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0) return false;
+        }
+        return true;
+    }
+
+    // Function to find the next prime number >= n
+    int find_next_prime(int n) {
+        while (!is_prime(n)) {
+            n++;
+        }
+        return n;
+    }
 
     // Function to rehash the existing keys when table size doubles
     void rehash() {
         int old_size = current_size;
-        current_size = 2*current_size + 1; // Double the size
+        current_size = find_next_prime(2*current_size); // Double the size
         vector<int> old_table = table;
         table.assign(current_size, empty); // New table with the doubled size
         num_elements = 0; // Reset element count, as we are going to re-hash
