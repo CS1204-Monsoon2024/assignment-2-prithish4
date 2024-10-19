@@ -42,7 +42,9 @@ private:
     }
 
 public:
-    HashTable(int size = 11) : current_size(size), num_elements(0) {
+    HashTable(int size = 11) {
+        num_elements = 0;
+        current_size = size;
         table.assign(current_size, empty);
     }
 
