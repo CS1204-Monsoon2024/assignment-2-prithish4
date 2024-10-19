@@ -91,6 +91,16 @@ public:
     int search(int key) {
         int index = hash(key);
         int i = 0;
+	if (num_elements == current_size)
+        {
+                cout << "Max probing limit reached!" << endl;
+		return;
+        }
+        if (search(key) != -1) 
+        {
+                cout << "Duplicate key insertion is not allowed" << endl;
+		return;
+        }
 
         // Quadratic probing to search
         while (table[(index + i * i) % current_size] != empty) {
@@ -116,7 +126,7 @@ public:
             }
             i++;
         }
-	cout << "Duplicate key insertion is not allowed" << endl;
+	cout << "Element not found" << endl;
     }
 
     // Function to print the current hash table
@@ -154,7 +164,7 @@ int main() {
     ht.printTable(); 
 
     int find = ht.search(22);
-    std::cout << "Found at:" << find << std::endl;
+    cout << "Found at:" << find << std::endl;
 
     return 0;
 }
