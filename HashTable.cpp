@@ -71,7 +71,7 @@ public:
         // Quadratic probing to search
         while (table[(index + i * i) % current_size] != empty) {
             if (table[(index + i * i) % current_size] == key) {
-                return true; // Key found
+                return (index+i*i); // Key found
             }
             i++;
         }
@@ -100,11 +100,11 @@ public:
         cout << "Hash Table: \n";
         for (int i = 0; i < current_size; ++i) {
             if (table[i] == empty) {
-                cout << i << ": empty\n";
+                cout << i << "- ";
             } else if (table[i] == deleted) {
-                cout << i << ": deleted\n";
+                cout << i << "- ";
             } else {
-                cout << i << ": " << table[i] << "\n";
+                cout << i << table[i] << " ";
             }
         }
         cout << "\n";
