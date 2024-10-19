@@ -36,7 +36,6 @@ private:
     void check_load_factor() {
         float load_factor = (float)num_elements / current_size;
         if (load_factor >= max_load_factor) {
-            cout << "Load factor exceeded 0.8, rehashing...\n";
             rehash();
         }
     }
@@ -92,7 +91,6 @@ public:
             }
             i++;
         }
-        cout << "Key " << key << " not found in the table.\n";
     }
 
     // Function to print the current hash table
