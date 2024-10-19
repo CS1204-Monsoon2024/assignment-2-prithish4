@@ -63,7 +63,7 @@ public:
     }
 
     // Search operation
-    bool search(int key) {
+    int search(int key) {
         int index = hash(key);
         int i = 0;
 
@@ -74,7 +74,7 @@ public:
             }
             i++;
         }
-        return false; // Key not found
+        return -1; // Key not found
     }
 
     // Delete operation
