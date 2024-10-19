@@ -20,7 +20,7 @@ private:
     // Function to rehash the existing keys when table size doubles
     void rehash() {
         int old_size = current_size;
-        current_size *= 2; // Double the size
+        current_size = 2*current_size + 1; // Double the size
         vector<int> old_table = table;
         table.assign(current_size, empty); // New table with the doubled size
         num_elements = 0; // Reset element count, as we are going to re-hash
