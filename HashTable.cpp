@@ -97,14 +97,13 @@ public:
 
     // Function to print the current hash table
     void printTable() {
-        cout << "Hash Table: \n";
         for (int i = 0; i < current_size; ++i) {
             if (table[i] == empty) {
-                cout << i << "- ";
+                cout << "- ";
             } else if (table[i] == deleted) {
-                cout << i << "- ";
+                cout << "- ";
             } else {
-                cout << i << table[i] << " ";
+                cout << table[i] << " ";
             }
         }
         cout << "\n";
