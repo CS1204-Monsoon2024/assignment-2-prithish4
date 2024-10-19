@@ -9,8 +9,8 @@ private:
     int current_size;
     int num_elements;
     float max_load_factor = 0.8;
-    const int empty = -1;
-    const int deleted = -2;
+    int empty = -1;
+    int deleted = -2;
 
     // Hash function h(x) = x % m
     int hash(int key) {
