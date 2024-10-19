@@ -66,6 +66,16 @@ public:
 
     // Insert operation
     void insert(int key) {
+	if (num_elements == current_size)
+	{
+		cout << "Max probing limit reached!" << endl;
+		return;
+	}
+	if (search(key) != -1)
+	{
+		cout << "Duplicate key insertion is not allowed" << endl;
+		return;
+	}
         check_load_factor(); // Check if rehashing is needed based on load factor
 
         int index = hash(key);
@@ -108,6 +118,7 @@ public:
             }
             i++;
         }
+	cout << "Element not found" << endl;
     }
 
     // Function to print the current hash table
