@@ -94,7 +94,7 @@ public:
     }
 
     // Function to print the current hash table
-    void print_table() {
+    void printTable() {
         cout << "Hash Table: \n";
         for (int i = 0; i < current_size; ++i) {
             if (table[i] == empty) {
