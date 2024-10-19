@@ -1,5 +1,3 @@
-//#include "HashTable.cpp"
-
 #include <iostream>
 #include <vector>
 #include <cmath>
